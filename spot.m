@@ -2,7 +2,7 @@ classdef spot < handle
     properties
         speed
         acceleration
-        direction  %方向
+        direction  
         position
     end
     methods
@@ -15,7 +15,6 @@ classdef spot < handle
         function forward(obj,time)
             obj.position(1)=obj.position(1)+cos(obj.direction)*obj.speed*time;
             obj.position(2)=obj.position(2)+sin(obj.direction)*obj.speed*time;
-            % 定义前进方向和距离
             obj.speed=obj.acceleration*time+obj.speed;
         end
         %function jiasudu(obj,time)
